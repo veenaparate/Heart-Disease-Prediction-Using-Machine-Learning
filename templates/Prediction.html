@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<style>
+    select {
+        width: 200px;
+        height: 30px;
+        margin: 10px;
+    }
+    select:focus {
+        min-width: 200px;
+        width: auto;
+    }
+            table, th, td {
+	            border: 1px solid black;
+	            border-collapse: collapse;
+	        }
+
+	        th, td {
+	            padding: 5px;
+	            text-align: left;
+	        }
+
+	        table#t01 {
+	            width: 100%;
+	            background-color: #f2f2d1;
+        }
+
+</style>
+<img src="/static/5.jpg" width="1200" height="200">
+</head>
+<script language="javascript">
+function check(form)
+{
+age
+sex
+
+	if(form.age.value == "")
+	{
+		alert("Error Enter age")
+		return false;
+	}
+	if(form.sex.value == "")
+	{
+		alert("Error Enter sex")
+		return false;
+	}
+	if(form.chestpain.value == "")
+	{
+		alert("Error Enter chestpain")
+		return false;
+	}
+	if(form.restbp.value == "")
+	{
+		alert("Error Enter restbp")
+		return false;
+	}
+	if(form.chol.value == "")
+	{
+		alert("Error Enter chol")
+		return false;
+	}
+
+	if(form.fbs.value == "")
+	{
+		alert("Error Enter fbs")
+		return false;
+	}
+
+
+	if(form.restecg.value == "")
+	{
+		alert("Error Enter restecg")
+		return false;
+	}
+	if(form.maxhr.value == "")
+	{
+		alert("Error Enter maxhr")
+		return false;
+	}
+	if(form.exang.value == "")
+	{
+		alert("Error Enter exang")
+		return false;
+	}
+	if(form.oldpeak.value == "")
+	{
+		alert("Error Enter oldpeak")
+		return false;
+	}
+	if(form.slope.value == "")
+	{
+		alert("Error Enter slope")
+		return false;
+	}
+	if(form.ca.value == "")
+	{
+		alert("Error Enter ca")
+		return false;
+	}
+	if(form.thal.value == "")
+	{
+		alert("Error Enter thal")
+		return false;
+	}
+	else
+	{
+			return true;
+	}
+
+}
+
+</script>
+<style>
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<div class="topnav">
+  <a href="PatientMain">Home</a>
+  <a href="UpdatePatient">Update Profile</a>
+  <a href="ViewDoctor">View Doctor</a>
+  <a href="Feedback">Feedback</a>
+  <a class="active" href="Prediction">Prediction</a>
+  <a href="logout">Logout</a>
+</div>
+
+
+
+<table width="20%" bgcolor="FFFFFF" align="left">
+<tr>
+
+</tr>
+</table>
+<table width="20%" bgcolor="FFFFFF" align="right">
+<tr>
+
+{%if username%}
+
+   <h4><center><font color="#FFFFF" size=4>welcome {{ username}} </font></center></h4>
+{%endif%}
+</tr>
+</table>
+
+
+<form action="/Prediction1" method="POST">
+
+<table width="100%" bgcolor="FFFFFF" align="center">
+{%if results%}
+{%if message%}
+
+   <h4><center><font color="#FFFFF" size=4> {{ message}} </font></center></h4>
+{%endif%}
+<tr>
+<tr>
+<td colspan=3><center><font size=6><b>Details</b></font></center></td>
+
+</tr>
+
+<td>Age (Ex:29-77):</td>
+<td><input type="text" id="age" name="age"  value="{{ results[0]}}"></td>
+</tr>
+<tr>
+
+<td>Sex (Ex:0 For Male- 1 For Female):</td>
+<td><input type="text" id="sex" name="sex" value="{{ results[1]}}"></td>
+
+</tr>
+<tr>
+
+<td>ChestPain (Ex:1-4):</td>
+<td><input type="text" id="chestpain" name="chestpain" value="{{ results[2]}}"></td>
+
+</tr>
+<tr>
+
+<td>RestBP (Ex:94-200):</td>
+<td><input type="text" id="restbp" name="restbp" value="{{ results[3]}}"></td>
+
+</tr>
+<tr>
+
+<td>Chol (Ex:126-560):</td>
+<td><input type="text" id="chol" name="chol" value="{{ results[4]}}"></td>
+
+</tr>
+<tr>
+
+<td>Fbs (Ex:0 or 1):</td>
+<td><input type="text" id="fbs" name="fbs" value="{{ results[5]}}"></td>
+
+</tr>
+<tr>
+
+
+<td>RestECG (Ex:0 or 1 or 2):</td>
+<td><input type="text" id="restecg" name="restecg" value="{{ results[6]}}"></td>
+
+</tr>
+<tr>
+
+<td>MaxHR (Ex:70-200):</td>
+<td><input type="text" id="maxhr" name="maxhr" value="{{ results[7]}}"></td>
+
+</tr>
+<tr>
+
+<td>ExAng (Ex:0 or 1):</td>
+<td><input type="text" id="exang" name="exang" value="{{ results[8]}}"></td>
+
+</tr>
+<tr>
+
+<td>Oldpeak (Ex:0.0-6.2):</td>
+<td><input type="text" id="oldpeak" name="oldpeak" value="{{ results[9]}}"></td>
+
+</tr>
+<tr>
+
+<td>Slope (Ex:1 or 2 or 3):</td>
+<td><input type="text" id="slope" name="slope" value="{{ results[10]}}"></td>
+
+</tr>
+<tr>
+
+<td>Ca (Ex:0 or 1 or 2 or 3):</td>
+<td><input type="text" id="ca" name="ca" value="{{ results[11]}}"></td>
+
+</tr>
+<tr>
+
+<td>Thal (Ex:3 or 6 or 7):</td>
+<td><input type="text" id="thal" name="thal" value="{{ results[12]}}"></td>
+
+</tr>
+
+<tr>
+
+<td>Result:</td>
+<td><input type="text" id="res" name="res" value="{{ results[13]}}"></td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+<td><input type="submit" onclick="return check(this.form)" value="Submit"></td>
+
+</tr>
+
+
+
+
+
+{% else %}
+<tr>
+<td colspan=3><center><font size=6><b>Details</b></font></center></td>
+
+</tr>
+
+<td>Age (Ex:29-77):</td>
+<td><input type="text" id="age" name="age"></td>
+</tr>
+<tr>
+
+<td>Sex (Ex:0 For Male- 1 For Female):</td>
+<td><input type="text" id="sex" name="sex"></td>
+
+</tr>
+<tr>
+
+<td>ChestPain (Ex:1-4):</td>
+<td><input type="text" id="chestpain" name="chestpain"></td>
+
+</tr>
+<tr>
+
+<td>RestBP (Ex:94-200):</td>
+<td><input type="text" id="restbp" name="restbp"></td>
+
+</tr>
+<tr>
+
+<td>Chol (Ex:126-560):</td>
+<td><input type="text" id="chol" name="chol"></td>
+
+</tr>
+<tr>
+
+<td>Fbs (Ex:0 or 1):</td>
+<td><input type="text" id="fbs" name="fbs"></td>
+
+</tr>
+<tr>
+
+
+<td>RestECG (Ex:0 or 1 or 2):</td>
+<td><input type="text" id="restecg" name="restecg"></td>
+
+</tr>
+<tr>
+
+<td>MaxHR (Ex:70-200):</td>
+<td><input type="text" id="maxhr" name="maxhr"></td>
+
+</tr>
+<tr>
+
+<td>ExAng (Ex:0 or 1):</td>
+<td><input type="text" id="exang" name="exang"></td>
+
+</tr>
+<tr>
+
+<td>Oldpeak (Ex:0.0-6.2):</td>
+<td><input type="text" id="oldpeak" name="oldpeak"></td>
+
+</tr>
+<tr>
+
+<td>Slope (Ex:1 or 2 or 3):</td>
+<td><input type="text" id="slope" name="slope"></td>
+
+</tr>
+<tr>
+
+<td>Ca (Ex:0 or 1 or 2 or 3):</td>
+<td><input type="text" id="ca" name="ca"></td>
+
+</tr>
+<tr>
+
+<td>Thal (Ex:3 or 6 or 7):</td>
+<td><input type="text" id="thal" name="thal"></td>
+
+</tr>
+
+<tr>
+
+<td>Result:</td>
+<td><input type="text" id="res" name="res"></td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+<td><input type="submit" onclick="return check(this.form)" value="Submit"></td>
+
+</tr>
+
+
+{%endif%}
+
+</table>
+<table>
+<tr>
+</tr>
+</table>
+
+</form>
+
+</br>
+</br>
+</br>
+</br>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<style>
+    select {
+        width: 200px;
+        height: 30px;
+        margin: 10px;
+    }
+    select:focus {
+        min-width: 200px;
+        width: auto;
+    }
+            table, th, td {
+	            border: 1px solid black;
+	            border-collapse: collapse;
+	        }
+
+	        th, td {
+	            padding: 5px;
+	            text-align: left;
+	        }
+
+	        table#t01 {
+	            width: 100%;
+	            background-color: #f2f2d1;
+        }
+
+</style>
+<img src="/static/5.jpg" width="1200" height="200">
+</head>
+<script language="javascript">
+function check(form)
+{
+	if(form.rollnumber.value == "")
+	{
+		alert("Error Enter RollNumber")
+		return false;
+	}
+
+	if(form.name.value == "")
+	{
+		alert("Error Enter Name")
+		return false;
+	}
+
+	if(form.fname.value == "")
+	{
+		alert("Error Enter Father Name")
+		return false;
+	}
+
+	if(form.email.value == "")
+	{
+		alert("Error Enter Email")
+		return false;
+	}
+	var email = form.email.value;
+	atpos = email.indexOf("@");
+	dotpos = email.lastIndexOf(".");
+	if (email == "" || atpos < 1 || ( dotpos - atpos < 2 ))
+	{
+	    alert("Please enter correct email ID")
+	    return false;
+	}
+	if(form.mob.value == "")
+	{
+		alert("Error Enter Mobilenumber")
+		return false;
+	}
+
+	if( form.mob.value == "" || isNaN( form.mob.value) || form.mob.value.length != 10 )
+    {
+        alert( "Please provide a Mobile No in the format 123 and 10 Digit." );
+        return false;
+    }
+
+    if(form.address.value == "")
+	{
+		alert("Error Enter Address")
+		return false;
+	}
+	if(form.degree.value == "")
+	{
+		alert("Error Enter Degree")
+		return false;
+	}
+
+	if(form.department.value == "")
+	{
+		alert("Error Enter Department")
+		return false;
+	}
+	if(form.syear.value == "")
+	{
+		alert("Error Enter Starting Year")
+		return false;
+	}
+	if(form.eyear.value == "")
+	{
+		alert("Error Enter Ending Year")
+		return false;
+	}
+
+	if(form.mark.value == "")
+	{
+		alert("Error Enter 10th Mark")
+		return false;
+	}
+	if(form.mark1.value == "")
+	{
+		alert("Error Enter 12th Mark")
+		return false;
+	}
+
+
+	else
+	{
+			return true;
+	}
+
+}
+
+function check1(form)
+{
+	if(form.rollnumber.value == "")
+	{
+		alert("Error Enter RollNumber")
+		return false;
+	}
+
+
+	else
+	{
+			return true;
+	}
+
+}
+
+</script>
+<style>
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<div class="topnav">
+  <a class="active" href="PatientMain">Home</a>
+  <a href="UpdatePatient">Update Profile</a>
+  <a href="ViewDoctor">View Doctor</a>
+  <a href="Feedback">Feedback</a>
+  <a href="Prediction">Prediction</a>
+  <a href="logout">Logout</a>
+</div>
+
+
+
+<table width="20%" bgcolor="FFFFFF" align="left">
+<tr>
+
+</tr>
+</table>
+<table width="100%" bgcolor="FFFFFF" align="right">
+<tr>
+{%if username%}
+
+
+   <td colspan=3><center><font size=6><b>Welcome {{ username}}</b></font></center></td>
+
+{%endif%}
+
+
+</tr>
+</table>
+
+</br>
+</br>
+</br>
+</br>
+</tbody></table>
+</body>
+</html>

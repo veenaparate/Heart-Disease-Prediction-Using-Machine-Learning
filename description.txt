@@ -1,0 +1,5 @@
+0 - Normal
+1- High Blood Pressure
+2- Coronary Artery Disease
+3- Congestive Heart Failure
+4- Storke
